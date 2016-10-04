@@ -5,6 +5,7 @@ package com.synconset;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PermissionHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,12 +13,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
 public class ImagePicker extends CordovaPlugin {
 	public static String TAG = "ImagePicker";
+	public static final String permissionDenied = "PERMISSION_DENIED";
 	 
 	private CallbackContext callbackContext;
 	private JSONObject params;
@@ -47,7 +50,10 @@ public class ImagePicker extends CordovaPlugin {
 			intent.putExtra("WIDTH", desiredWidth);
 			intent.putExtra("HEIGHT", desiredHeight);
 			intent.putExtra("QUALITY", quality);
-			if (this.cordova != null) {
+
+			if(!PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+				this.callbackContext.error(permissionDenied);
+			} else if (this.cordova != null) {
 				this.cordova.startActivityForResult((CordovaPlugin) this, intent, 0);
 			}
 		}
