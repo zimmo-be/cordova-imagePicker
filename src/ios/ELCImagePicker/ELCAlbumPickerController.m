@@ -67,8 +67,8 @@
             // Group Enumerator Failure Block
             void (^assetGroupEnumberatorFailure)(NSError *) = ^(NSError *error) {
                 
-                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Autorisatiefout" message:[NSString stringWithFormat:@"Ga naar 'instellingen' van uw toestel om de nodige rechten (Foto's) toe te voegen aan de Max-Immo applicatie."] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-                [alert show];
+//                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Autorisatiefout" message:[NSString stringWithFormat:@"Ga naar 'instellingen' van uw toestel om de nodige rechten (Foto's) toe te voegen aan de Max-Immo applicatie."] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+//                [alert show];
                 
                 NSLog(@"A problem occured %@", [error description]);	                                 
             };	
