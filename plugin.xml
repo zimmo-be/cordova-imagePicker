@@ -111,5 +111,6 @@
 		<source-file src="src/android/Library/res/values-hu/multiimagechooser_strings_hu.xml" target-dir="res/values-hu"/>
 		<source-file src="src/android/Library/res/values-ja/multiimagechooser_strings_ja.xml" target-dir="res/values-ja"/>
 		<source-file src="src/android/Library/res/values-ko/multiimagechooser_strings_ko.xml" target-dir="res/values-ko"/>
+        <source-file src="src/android/Library/res/values-nl/multiimagechooser_strings_nl.xml" target-dir="res/values-nl"/>
 	</platform>
 </plugin>
